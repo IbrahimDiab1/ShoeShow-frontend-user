@@ -12,6 +12,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { ProductService } from '../../core/services/product.service';
 import { Product } from '../../core/models/product.model';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-home',
@@ -61,7 +62,7 @@ export class HomeComponent implements OnInit {
   }
 
   getImageUrl(imagePath: string): string {
-    return `http://localhost:8081/${imagePath}`;
+    return `${environment.apiUrl}/${imagePath}`;
   }
 
   onSubscribe(): void {
